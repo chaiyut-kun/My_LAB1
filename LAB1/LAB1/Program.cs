@@ -16,7 +16,12 @@ namespace LAB1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Exit();
+
             Application.Run(new Form1());
+
+
+
         }
     }
 }
