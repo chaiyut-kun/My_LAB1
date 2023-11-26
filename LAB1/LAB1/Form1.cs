@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LAB1
 {
@@ -60,7 +61,7 @@ namespace LAB1
             //1
             textBox_input.Text = "1";
             number_str += "1";
-            number += 1;
+            //number += 1;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -68,14 +69,14 @@ namespace LAB1
 
             textBox_input.Text = "2";
             number_str += "2";
-            number += 2;
+            //number += 2;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
 
             number_str += "3";
-            number += 3;
+            //number += 3;
             textBox_input.Text = "3";
         }
 
@@ -83,7 +84,7 @@ namespace LAB1
         {
             textBox_input.Text = "4";
             number_str += "4";
-            number += 4;
+            //number += 4;
 
         }
 
@@ -91,20 +92,20 @@ namespace LAB1
         {
             textBox_input.Text = "5";
             number_str += "5";
-            number += 5;
+            //number += 5;
         }
         private void button8_Click(object sender, EventArgs e)
         {
             textBox_input.Text = "6";
             number_str += "6";
-            number += 6;
+            //number += 6;
 
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             number_str += "7";
-            number += 7;
+            //number += 7;
             textBox_input.Text = "7";
 
         }
@@ -113,14 +114,14 @@ namespace LAB1
         {
             textBox_input.Text = "8";
             number_str += "8";
-            number += 8;
+            //number += 8;
 
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             number_str += "9";
-            number += 9;
+            //number += 9;
             textBox_input.Text = "9";
 
         }
@@ -139,7 +140,9 @@ namespace LAB1
             // Plus
 
             num1 = textBox_input.Text;
+            textBox_input.Text = string.Empty;
             Operator = "+";
+
 
         }
 
@@ -150,7 +153,7 @@ namespace LAB1
             try
             {
                     string num2 = textBox_input.Text;
-                    int Num1 = int.Parse(num1) , Num2 = int.Parse(num2) ;
+                    double Num1 = double.Parse(num1) , Num2 = double.Parse(num2) ;
 
                     if (Operator == "+")
                     {
@@ -168,12 +171,12 @@ namespace LAB1
                     {
 
                         textBox_input.Text = String.Format("{0}", Num1 * Num2);
-
-                    }
-                    else
+                }
+                else
                     {
-
-                        textBox_input.Text = String.Format("{0}", Num1 / Num2);
+                        double num = Num1 / Num2;
+                        string stringValue = num.ToString().Replace(',', '.');
+                        textBox_input.Text = stringValue;
                     }
             }
             catch ( DivideByZeroException )
@@ -216,6 +219,11 @@ namespace LAB1
             textBox_input.Text = string.Empty;
             Operator = "*";
             // multiply
+
+        }
+
+        private void textBox_input_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
