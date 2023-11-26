@@ -16,7 +16,7 @@ namespace LAB1
     {
         public string num1;
         public int number = 0;
-        public string number_str = "HaHa";
+        public string number_str = "";
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +51,7 @@ namespace LAB1
         {
 
             textBox_input.Text = string.Empty;
+            number_str = "";
             //clear
         }
 
@@ -59,92 +60,71 @@ namespace LAB1
         {
 
             //1
-            textBox_input.Text = "1";
             number_str += "1";
-            //number += 1;
+            textBox_input.Text = number_str;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
 
-            textBox_input.Text = "2";
             number_str += "2";
-            //number += 2;
+            textBox_input.Text = number_str;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
 
             number_str += "3";
-            //number += 3;
-            textBox_input.Text = "3";
+            textBox_input.Text = number_str;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox_input.Text = "4";
             number_str += "4";
-            //number += 4;
+            textBox_input.Text = number_str;
 
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox_input.Text = "5";
             number_str += "5";
-            //number += 5;
+            textBox_input.Text = number_str;
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox_input.Text = "6";
             number_str += "6";
-            //number += 6;
+            textBox_input.Text = number_str;
 
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             number_str += "7";
-            //number += 7;
-            textBox_input.Text = "7";
+            textBox_input.Text = number_str;
 
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             textBox_input.Text = "8";
-            number_str += "8";
-            //number += 8;
+            number_str += number_str;
 
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             number_str += "9";
-            //number += 9;
-            textBox_input.Text = "9";
+            textBox_input.Text = number_str;
 
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             number_str += "0";
-            number += 0;
-            textBox_input.Text = "0";
+            textBox_input.Text = number_str;
 
         }
 
-        string Operator ;
-        private void button13_Click(object sender, EventArgs e)
-        {
-            // Plus
-
-            num1 = textBox_input.Text;
-            textBox_input.Text = string.Empty;
-            Operator = "+";
-
-
-        }
 
         private void button14_Click(object sender, EventArgs e)
         {
@@ -185,9 +165,16 @@ namespace LAB1
             }
             
 
+        }
+        string Operator ;
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // Plus
 
-
-
+            num1 = number_str;
+            Operator = "+";
+            textBox_input.Text = string.Empty;
+            number_str = "";
 
 
         }
@@ -196,8 +183,9 @@ namespace LAB1
         {
 
             //minus
-            num1 = textBox_input.Text;
+            num1 = number_str;
             Operator = "-";
+            number_str = "";
             textBox_input.Text = string.Empty;
             
             
@@ -206,18 +194,20 @@ namespace LAB1
 
         private void button16_Click(object sender, EventArgs e)
         {
-            num1 = textBox_input.Text;
+            num1 = number_str;
             textBox_input.Text = string.Empty;
             Operator = "/";
+            number_str = "";
             // devide
 
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            num1 = textBox_input.Text;
+            num1 = number_str;
             textBox_input.Text = string.Empty;
             Operator = "*";
+            number_str = "";
             // multiply
 
         }
