@@ -51,7 +51,7 @@ namespace LAB1
         {
 
             textBox_input.Text = string.Empty;
-            number_str = "";
+            number_str = "";                                                                                                                                    
             //clear
         }
 
@@ -156,7 +156,7 @@ namespace LAB1
                     {
                         double num = Num1 / Num2;
                         string stringValue = num.ToString().Replace(',', '.');
-                        textBox_input.Text = stringValue;
+                        textBox_input.Text = $"{num:0.00}";
                     }
             }
             catch ( DivideByZeroException )
